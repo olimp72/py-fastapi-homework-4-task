@@ -2,6 +2,7 @@ from datetime import date
 from pydantic import BaseModel, ConfigDict, field_validator
 from validation.profile import validate_name, validate_gender, validate_birth_date
 
+
 class ProfileCreateSchema(BaseModel):
     first_name: str
     last_name: str
@@ -30,6 +31,7 @@ class ProfileCreateSchema(BaseModel):
         if not value or not value.strip():
             raise ValueError("Info cannot be empty or consist only of spaces.")
         return value
+
 
 class ProfileResponseSchema(BaseModel):
     id: int
