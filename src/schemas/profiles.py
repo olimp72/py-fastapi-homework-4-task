@@ -25,6 +25,7 @@ class ProfileCreateSchema(BaseModel):
     def validate_age(cls, value: date):
         return validate_birth_date(value)
 
+
     @field_validator("info")
     @classmethod
     def validate_info(cls, value: str):
